@@ -58,14 +58,14 @@ export default function Home() {
         </p>
 
         <a
-  className="primary-button"
-  href="https://discord.com/oauth2/authorize?client_id=1560663876092035103&permissions=8&integration_type=0&scope=bot+applications.commands"
-  target="_blank"
-  rel="noopener noreferrer"
+          className="primary-button"
+          href="https://discord.com/oauth2/authorize?client_id=1560663876092035103&permissions=8&integration_type=0&scope=bot+applications.commands"
+          target="_blank"
+          rel="noopener noreferrer"
 >
-  Add Lovelorn →
-</a>
+          Add Lovelorn →
 
+</a
           <a className="secondary-button" href="#features">
             Explore Features
           </a>
