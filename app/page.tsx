@@ -70,7 +70,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="love-note">made with ♡ for your community</div>
+        <div className="love-note">made with ♡ from /l♡velorm</div>
       </section>
 
       <section className="features" id="features">
