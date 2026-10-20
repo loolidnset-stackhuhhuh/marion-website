@@ -145,10 +145,11 @@ a {
 }
 
 .feature {
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 111, 174, 0.18);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 111, 174, 0.06);
   padding: 26px;
+  box-shadow: 0 8px 30px rgba(255, 80, 150, 0.08);
 }
 
 .feature:hover {
