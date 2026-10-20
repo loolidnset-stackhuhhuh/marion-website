@@ -4,64 +4,22 @@
 import { useMemo, useState } from "react";
 
 const commands = [
-  {
-    name: ",c",
-    category: "Moderation",
-    description: "Clear recent messages from a channel.",
-  },
-  {
-    name: ",bc",
-    category: "Moderation",
-    description: "Clear messages sent by bots.",
-  },
-  {
-    name: ",ban",
-    category: "Moderation",
-    description: "Ban a member from your server.",
-  },
-  {
-    name: ",kick",
-    category: "Moderation",
-    description: "Remove a member from your server.",
-  },
-  {
-    name: ",mute",
-    category: "Moderation",
-    description: "Restrict a member from chatting.",
-  },
-  {
-    name: ",afk",
-    category: "Utility",
-    description: "Set an AFK status for when you're away.",
-  },
-  {
-    name: ",gw start",
-    category: "Giveaways",
-    description: "Start a new giveaway.",
-  },
-  {
-    name: ",gw end",
-    category: "Giveaways",
-    description: "End an active giveaway.",
-  },
-  {
-    name: ",gw reroll",
-    category: "Giveaways",
-    description: "Choose a new giveaway winner.",
-  },
-  {
-    name: ",help",
-    category: "Utility",
-    description: "View available bot commands.",
-  },
+  { name: ",c", category: "Moderation", description: "Clear recent messages from a channel." },
+  { name: ",bc", category: "Moderation", description: "Clear messages sent by bots." },
+  { name: ",ban", category: "Moderation", description: "Ban a member from your server." },
+  { name: ",kick", category: "Moderation", description: "Remove a member from your server." },
+  { name: ",mute", category: "Moderation", description: "Restrict a member from chatting." },
+  { name: ",afk", category: "Utility", description: "Set an AFK status when you're away." },
+  { name: ",gw start", category: "Giveaways", description: "Start a new giveaway." },
+  { name: ",gw end", category: "Giveaways", description: "End an active giveaway." },
+  { name: ",gw reroll", category: "Giveaways", description: "Choose a new giveaway winner." },
+  { name: ",help", category: "Utility", description: "View available bot commands." },
 ];
 
-const categories = [
-  "All",
-  "Moderation",
-  "Giveaways",
-  "Utility",
-];
+const categories = ["All", "Moderation", "Giveaways", "Utility"];
+
+const inviteLink =
+  "https://discord.com/oauth2/authorize?client_id=1560663876092035103&permissions=8&integration_type=0&scope=bot+applications.commands";
 
 export default function CommandsPage() {
   const [search, setSearch] = useState("");
@@ -70,12 +28,14 @@ export default function CommandsPage() {
   const filteredCommands = useMemo(() => {
     return commands.filter((command) => {
       const matchesCategory =
-        category === "All" ||
-        command.category === category;
+        category === "All" || command.category === category;
+
+      const term = search.toLowerCase();
 
       const matchesSearch =
-        command.name.toLowerCase().includes(search.toLowerCase()) ||
-        command.description.toLowerCase().includes(search.toLowerCase());
+        command.name.toLowerCase().includes(term) ||
+        command.description.toLowerCase().includes(term) ||
+        command.category.toLowerCase().includes(term);
 
       return matchesCategory && matchesSearch;
     });
@@ -84,9 +44,7 @@ export default function CommandsPage() {
   return (
     <main className="site commands-page">
       <nav className="navbar">
-        <a className="logo" href="/">
-          LOVEL♡RN
-        </a>
+        <a className="logo" href="/">LOVEL♡RN</a>
 
         <div className="nav-links">
           <a href="/">Home</a>
@@ -95,7 +53,7 @@ export default function CommandsPage() {
 
         <a
           className="dashboard-button"
-          href="https://discord.com/oauth2/authorize?client_id=1560663876092035103&permissions=8&integration_type=0&scope=bot+applications.commands"
+          href={inviteLink}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -143,10 +101,7 @@ export default function CommandsPage() {
       <section className="command-list">
         {filteredCommands.length > 0 ? (
           filteredCommands.map((command) => (
-            <article
-              className="command-card"
-              key={command.name}
-            >
+            <article className="command-card" key={command.name}>
               <div>
                 <code>{command.name}</code>
                 <p>{command.description}</p>
