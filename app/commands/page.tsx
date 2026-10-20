@@ -172,3 +172,135 @@ export default function CommandsPage() {
     </main>
   );
 }
+
+/* Lovelorn Commands Page */
+.commands-hero {
+  min-height: 440px;
+  padding-bottom: 35px;
+}
+
+.commands-hero h1 {
+  font-size: clamp(48px, 8vw, 76px);
+}
+
+.command-search {
+  width: min(100%, 520px);
+  margin-top: 30px;
+  padding: 16px 22px;
+  border: 1px solid rgba(230, 79, 153, 0.25);
+  border-radius: 999px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: #713653;
+  font: inherit;
+  box-shadow: 0 8px 25px rgba(189, 93, 139, 0.08);
+}
+
+.command-search:focus {
+  border-color: #e64f99;
+  box-shadow: 0 0 0 4px rgba(230, 79, 153, 0.1);
+}
+
+.command-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.command-filter {
+  padding: 10px 18px;
+  border: 1px solid rgba(230, 79, 153, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #bd477f;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s ease;
+}
+
+.command-filter:hover,
+.command-filter.active {
+  background: linear-gradient(135deg, #ff9dca, #ed5a9f);
+  color: white;
+  box-shadow: 0 5px 18px rgba(237, 90, 159, 0.2);
+}
+
+.command-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 10px 6% 80px;
+}
+
+.command-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  border: 1px solid rgba(226, 112, 166, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 28px rgba(189, 93, 139, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.command-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(237, 90, 159, 0.13);
+}
+
+.command-card code {
+  display: inline-block;
+  color: #d94391;
+  font-size: 17px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.command-card p {
+  margin: 9px 0 0;
+  color: #986b83;
+  line-height: 1.6;
+}
+
+.command-category {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ffe3f0;
+  color: #bd477f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.no-commands {
+  grid-column: 1 / -1;
+  padding: 35px;
+  color: #986b83;
+  text-align: center;
+}
+
+.commands-page .footer a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #d94391;
+}
+
+@media (max-width: 650px) {
+  .command-list {
+    grid-template-columns: 1fr;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .command-card {
+    padding: 18px;
+  }
+
+  .command-category {
+    font-size: 10px;
+  }
+}
