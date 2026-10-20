@@ -39,4 +39,73 @@ export default function Home() {
         </div>
 
         <a
-          className="dashboard-button
+          className="dashboard-button"
+          href={inviteLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Add Bot ♡
+        </a>
+      </nav>
+
+      <section className="hero" id="about">
+        <div className="floating-heart heart-one">♥</div>
+        <div className="floating-heart heart-two">♥</div>
+        <div className="floating-heart heart-three">♡</div>
+        <div className="floating-heart heart-four">♥</div>
+
+        <div className="badge">
+          ♡ Your server's new favorite
+        </div>
+
+        <h1>LOVELORN</h1>
+
+        <p>
+          A little more love for your Discord server.
+          <br />
+          Moderation, fun, and everything in between.
+        </p>
+
+        <div className="buttons">
+          <a
+            className="primary-button"
+            href={inviteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Add Lovelorn →
+          </a>
+
+          <a
+            className="secondary-button"
+            href="#features"
+          >
+            Explore Features
+          </a>
+        </div>
+
+        <div className="love-note">
+          made with ♡ 
+        </div>
+      </section>
+
+      <section className="features" id="features">
+        {features.map((feature) => (
+          <article
+            className="feature"
+            key={feature.title}
+          >
+            <div className="icon">{feature.icon}</div>
+            <h2>{feature.title}</h2>
+            <p>{feature.description}</p>
+          </article>
+        ))}
+      </section>
+
+      <footer className="footer" id="dashboard">
+        <span>♡ LOVELORN</span>
+        <p>A little love goes a long way.</p>
+      </footer>
+    </main>
+  );
+}
