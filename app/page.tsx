@@ -35,7 +35,7 @@ export default function Home() {
 
         <div className="nav-links">
           <a href="/">Home</a>
-          <a href="/#features">Features</a>
+          <a href="/features">Features</a>
           <a href="/#about">About</a>
           <a href="/commands">Commands</a>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
             Add Lovelorn →
           </a>
 
-          <a className="secondary-button" href="#features">
+          <a className="secondary-button" href="/features">
             Explore Features
           </a>
         </div>
