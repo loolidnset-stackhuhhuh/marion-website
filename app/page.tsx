@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="site">
       <nav className="navbar">
-        <div className="logo">MARION</div>
+        <div className="logo">LOVELORN</div>
 
         <div className="nav-links">
           <a href="#">Commands</a>
