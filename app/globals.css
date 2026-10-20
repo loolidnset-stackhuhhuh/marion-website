@@ -61,10 +61,11 @@ a {
   border: none;
   border-radius: 12px;
   padding: 13px 22px;
-  background: #ffffff;
-  color: #0b0d12;
+  background: #ff6fae;
+  color: #ffffff;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 0 24px rgba(255, 111, 174, 0.25);
 }
 
 .dashboard-button:hover,
