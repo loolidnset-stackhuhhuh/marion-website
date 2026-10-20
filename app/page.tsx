@@ -1,3 +1,4 @@
+
 const features = [
   {
     icon: "♡",
@@ -28,14 +29,15 @@ export default function Home() {
   return (
     <main className="site">
       <nav className="navbar">
-        <a className="logo" href="#">
+        <a className="logo" href="/">
           LOVEL♡RN
         </a>
 
         <div className="nav-links">
-          <a href="#">Home</a>
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
+          <a href="/">Home</a>
+          <a href="/#features">Features</a>
+          <a href="/#about">About</a>
+          <a href="/commands">Commands</a>
         </div>
 
         <a
@@ -54,9 +56,7 @@ export default function Home() {
         <div className="floating-heart heart-three">♡</div>
         <div className="floating-heart heart-four">♥</div>
 
-        <div className="badge">
-          ♡ Your server's new favorite
-        </div>
+        <div className="badge">♡ Your server's new favorite</div>
 
         <h1>LOVELORN</h1>
 
@@ -76,25 +76,19 @@ export default function Home() {
             Add Lovelorn →
           </a>
 
-          <a
-            className="secondary-button"
-            href="#features"
-          >
+          <a className="secondary-button" href="#features">
             Explore Features
           </a>
         </div>
 
         <div className="love-note">
-          made with ♡ 
+          made with ♡ for your community
         </div>
       </section>
 
       <section className="features" id="features">
         {features.map((feature) => (
-          <article
-            className="feature"
-            key={feature.title}
-          >
+          <article className="feature" key={feature.title}>
             <div className="icon">{feature.icon}</div>
             <h2>{feature.title}</h2>
             <p>{feature.description}</p>
@@ -102,9 +96,10 @@ export default function Home() {
         ))}
       </section>
 
-      <footer className="footer" id="dashboard">
+      <footer className="footer">
         <span>♡ LOVELORN</span>
         <p>A little love goes a long way.</p>
+        <a href="/commands">Explore Commands ♡</a>
       </footer>
     </main>
   );
