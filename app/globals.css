@@ -153,8 +153,11 @@ a {
 }
 
 .feature:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 111, 174, 0.1);
+  border-color: rgba(255, 111, 174, 0.35);
   transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 80, 150, 0.15);
+}
 }
 
 .icon {
